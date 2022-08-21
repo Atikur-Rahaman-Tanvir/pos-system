@@ -31,3 +31,6 @@
 
     <link rel="stylesheet" href="{{ asset('assets') }}/css/style1.css" />
     <link rel="stylesheet" href="{{ asset('assets') }}/css/colors/default.css" id="colorSkinCSS">
+
+    {{-- toastr alert --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">

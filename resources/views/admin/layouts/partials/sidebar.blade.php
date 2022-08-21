@@ -24,12 +24,22 @@
                 </ul>
             </li>
             <li class="">
-                <a href="{{ asset('assets') }}/crypto_wallet.html" aria-expanded="false">
+                <a href="{{route('admin.pos.index')}}" aria-expanded="false">
                     <div class="nav_icon_small">
                         <img src="{{ asset('assets') }}/img/menu-icon/2.svg" alt="">
                     </div>
                     <div class="nav_title">
-                        <span>Crypto Wallet</span>
+                        <span>POS</span>
+                    </div>
+                </a>
+            </li>
+            <li class="">
+                <a href="{{route('admin.category.index')}}" aria-expanded="false">
+                    <div class="nav_icon_small">
+                        <img src="{{ asset('assets') }}/img/menu-icon/2.svg" alt="">
+                    </div>
+                    <div class="nav_title">
+                        <span>Category</span>
                     </div>
                 </a>
             </li>

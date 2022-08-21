@@ -56,3 +56,6 @@
 
     <script src="{{ asset('assets') }}/js/dashboard_init.js"></script>
     <script src="{{ asset('assets') }}/js/custom.js"></script>
+
+    {{-- toastr js  --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
