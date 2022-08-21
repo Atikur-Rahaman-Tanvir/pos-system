@@ -1,73 +1,88 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="zxx">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<!-- Mirrored from demo.dashboardpack.com/cryptocurrency-html/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jun 2022 07:08:00 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+<head>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>BitCrypto</title>
+    <link rel="icon" href="{{asset('assets')}}/img/mini_logo.png" type="image/png">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+    <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap1.min.css" />
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+    <link rel="stylesheet" href="{{asset('assets')}}/vendors/themefy_icon/themify-icons.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/vendors/font_awesome/css/all.min.css" />
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+    <link rel="stylesheet" href="{{asset('assets')}}/vendors/scroll/scrollable.css" />
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+    <link rel="stylesheet" href="{{asset('assets')}}/css/metisMenu.css">
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+    <link rel="stylesheet" href="{{asset('assets')}}/css/style1.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/css/colors/default.css" id="colorSkinCSS">
+</head>
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+<body class="crm_body_bg">
+
+    <section class="main_content dashboard_part large_header_bg" style="padding-left:0">
+        <div class="main_content_iner ">
+            <div class="container-fluid p-0">
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-12">
+                        <div class="white_box mb_30">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+
+                                    <div class="modal-content cs_modal">
+                                        <div class="modal-header justify-content-center theme_bg_1">
+                                            <h5 class="modal-title text_white">Log in</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="post" action="{{route('login')}}" >
+                                                @csrf
+                                                @error('email')
+                                                <span class="text-danger">{{$message}}</span>
+                                                @enderror
+                                                <div class="">
+                                                    <input type="email" class="form-control"
+                                                    placeholder="Enter your email" name="email" value="{{ old('email')}}">
+                                                </div>
+                                                @error('password')
+                                                <span class="text-danger">{{$message}}</span>
+                                                @enderror
+                                                <div class="">
+                                                    <input type="password" class="form-control"
+                                                        placeholder="Password" name="password">
+                                                </div>
+                                                <button type="submit" class="btn_1 full_width text-center">Log in</button>
+                                                <p>Need an account? <a
+                                                        href="{{route('register')}}"> Sign Up</a></p>
+                                                <div class="text-center">
+                                                    <a href="{{route('password.request')}}"
+                                                        class="pass_forget_btn">Forget Password?</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    </section>
+
+
+
+
+</body>
+
+<!-- Mirrored from demo.dashboardpack.com/cryptocurrency-html/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jun 2022 07:08:00 GMT -->
+
+</html>

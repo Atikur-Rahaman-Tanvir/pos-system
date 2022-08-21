@@ -1,77 +1,103 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="zxx">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<!-- Mirrored from demo.dashboardpack.com/cryptocurrency-html/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jun 2022 07:08:00 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+<head>
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>BitCrypto</title>
+    <link rel="icon" href="{{asset('assets')}}/img/mini_logo.png" type="image/png">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+    <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap1.min.css" />
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+    <link rel="stylesheet" href="{{asset('assets')}}/vendors/themefy_icon/themify-icons.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/vendors/font_awesome/css/all.min.css" />
+
+
+    <link rel="stylesheet" href="{{asset('assets')}}/vendors/scroll/scrollable.css" />
+
+    <link rel="stylesheet" href="{{asset('assets')}}/css/metisMenu.css">
+
+    <link rel="stylesheet" href="{{asset('assets')}}/css/style1.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/css/colors/default.css" id="colorSkinCSS">
+</head>
+
+<body class="crm_body_bg">
+
+    <section class="main_content dashboard_part large_header_bg" style="padding-left:0">
+        <div class="main_content_iner ">
+            <div class="container-fluid p-0">
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-12">
+                        <div class="white_box mb_30">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+
+                                    <div class="modal-content cs_modal">
+                                        <div class="modal-header justify-content-center theme_bg_1">
+                                            <h5 class="modal-title text_white">Sign Up</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="post" action="{{route('register')}}" >
+                                                @csrf
+                                                @error('name')
+                                                <span class="text-danger">{{$message}}</span>
+                                                @enderror
+                                                <div class="">
+                                                    <input type="name" class="form-control"
+                                                    placeholder="Enter your Name" name="name" value="{{ old('name')}}">
+                                                </div>
+
+
+                                                @error('email')
+                                                <span class="text-danger">{{$message}}</span>
+                                                @enderror
+                                                <div class="">
+                                                    <input type="email" class="form-control"
+                                                    placeholder="Enter your email" name="email" value="{{ old('email')}}">
+                                                </div>
+
+                                                @error('password')
+                                                <span class="text-danger">{{$message}}</span>
+                                                @enderror
+                                                <div class="">
+                                                    <input type="password" class="form-control"
+                                                        placeholder="Enter Password" name="password">
+                                                </div>
+
+                                                @error('password_confirmation')
+                                                <span class="text-danger">{{$message}}</span>
+                                                @enderror
+                                                <div class="">
+                                                    <input type="password" class="form-control"
+                                                        placeholder="Re-enter Password" name="password_confirmation">
+                                                </div>
+                                                <button type="submit" class="btn_1 full_width text-center">Sin Up</button>
+                                                <p>Already have an account? <a
+                                                        href="{{route('login')}}"> Log In</a></p>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    </section>
+
+
+
+
+</body>
+
+<!-- Mirrored from demo.dashboardpack.com/cryptocurrency-html/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jun 2022 07:08:00 GMT -->
+
+</html>
