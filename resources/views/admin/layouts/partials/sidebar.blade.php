@@ -44,6 +44,16 @@
                 </a>
             </li>
             <li class="">
+                <a href="{{route('admin.product.index')}}" aria-expanded="false">
+                    <div class="nav_icon_small">
+                        <img src="{{ asset('assets') }}/img/menu-icon/2.svg" alt="">
+                    </div>
+                    <div class="nav_title">
+                        <span>Products</span>
+                    </div>
+                </a>
+            </li>
+            <li class="">
                 <a href="{{ asset('assets') }}/buy_sell.html" aria-expanded="false">
                     <div class="nav_icon_small">
                         <img src="{{ asset('assets') }}/img/menu-icon/3.svg" alt="">
