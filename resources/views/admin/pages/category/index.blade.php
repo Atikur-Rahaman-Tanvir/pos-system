@@ -43,7 +43,6 @@ category list
                                         </div>
                                     </div>
                                     <div class="QA_table mb_30">
-
                                         <table class="table lms_table_active3 " id="data_table">
                                             <thead>
                                                 <tr>

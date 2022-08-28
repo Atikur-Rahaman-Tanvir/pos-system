@@ -6,7 +6,14 @@
                             <i class="ti-menu"></i>
                         </div>
                         <div class="line_icon open_miniSide d-none d-lg-block">
-                            <img src="{{ asset('assets') }}/img/line_img.png" alt="">
+                                 <a href="{{route('home')}}"> <button class="btn btn-outline-info" style="width: 150px;height: 50px;margin-right:30px">
+
+                                <div class=""> <i class="fa fa-home fa-1x"></i> Home</div>
+                            </button></a>
+                            <a href="{{route('admin.pos.index')}}"> <button class="btn btn-outline-info" style="width: 150px;height: 50px;margin-right:30px">
+
+                                <div class=""><i class="fa fa-shopping-cart fa-1x"></i> Pos sell</div>
+                            </button></a>
                         </div>
                         <div class="header_right d-flex justify-content-between align-items-center">
                             <div class="header_notification_warp d-flex align-items-center">

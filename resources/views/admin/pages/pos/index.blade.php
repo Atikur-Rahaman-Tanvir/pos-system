@@ -62,149 +62,7 @@
 
         <div class="container-fluid g-0">
             <div class="row">
-                <div class="col-lg-12 p-0 ">
-                    <div class="header_iner d-flex justify-content-between align-items-center">
-                        <div class="sidebar_icon d-lg-none">
-                            <i class="ti-menu"></i>
-                        </div>
-                        <div class="line_icon open_miniSide d-none d-lg-block">
-                            <img src="{{ asset('assets') }}/img/line_img.png" alt="">
-                        </div>
-                        <div class="header_right d-flex justify-content-between align-items-center">
-                            <div class="header_notification_warp d-flex align-items-center">
-                                <li>
-                                    <a class="CHATBOX_open nav-link-notify" href="{{ asset('assets') }}/#"> <img
-                                            src="{{ asset('assets') }}/img/icon/msg.svg" alt=""> </a>
-                                </li>
-                                <li>
-                                    <a class="bell_notification_clicker nav-link-notify"
-                                        href="{{ asset('assets') }}/#"> <img
-                                            src="{{ asset('assets') }}/img/icon/bell.svg" alt="">
 
-                                    </a>
-
-                                    <div class="Menu_NOtification_Wrap">
-                                        <div class="notification_Header">
-                                            <h4>Notifications</h4>
-                                        </div>
-                                        <div class="Notification_body">
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="{{ asset('assets') }}/#"><img
-                                                            src="{{ asset('assets') }}/img/staf/2.png"
-                                                            alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="{{ asset('assets') }}/#">
-                                                        <h5>Cool Marketing </h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="{{ asset('assets') }}/#"><img
-                                                            src="{{ asset('assets') }}/img/staf/4.png"
-                                                            alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="{{ asset('assets') }}/#">
-                                                        <h5>Awesome packages</h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="{{ asset('assets') }}/#"><img
-                                                            src="{{ asset('assets') }}/img/staf/3.png"
-                                                            alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="{{ asset('assets') }}/#">
-                                                        <h5>what a packages</h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="{{ asset('assets') }}/#"><img
-                                                            src="{{ asset('assets') }}/img/staf/2.png"
-                                                            alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="{{ asset('assets') }}/#">
-                                                        <h5>Cool Marketing </h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="{{ asset('assets') }}/#"><img
-                                                            src="{{ asset('assets') }}/img/staf/4.png"
-                                                            alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="{{ asset('assets') }}/#">
-                                                        <h5>Awesome packages</h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="{{ asset('assets') }}/#"><img
-                                                            src="{{ asset('assets') }}/img/staf/3.png"
-                                                            alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="{{ asset('assets') }}/#">
-                                                        <h5>what a packages</h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="nofity_footer">
-                                            <div class="submit_button text-center pt_20">
-                                                <a href="{{ asset('assets') }}/#" class="btn_1 green">See More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </li>
-                            </div>
-                            <div class="profile_info d-flex align-items-center">
-                                <div class="profile_thumb mr_20">
-                                    <img src="{{ asset('assets') }}/img/transfer/4.png" alt="#">
-                                </div>
-                                <div class="author_name">
-                                    <h4 class="f_s_15 f_w_500 mb-0">Jiue Anderson</h4>
-                                    <p class="f_s_12 f_w_400">Manager</p>
-                                </div>
-                                <div class="profile_info_iner">
-                                    <div class="profile_author_name">
-                                        <p>Manager</p>
-                                        <h5>Jiue Anderson</h5>
-                                    </div>
-                                    <div class="profile_info_details">
-                                        <a href="{{ asset('assets') }}/#">My Profile </a>
-                                        <a href="{{ asset('assets') }}/#">Settings</a>
-                                        <a href="{{ asset('assets') }}/#">Log Out </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -212,7 +70,10 @@
             <div class="container-fluid p-0 ">
 
                 <div class="row mb-2">
-                    <div class="col-lg-4">
+                    <div class="col-lg-2">
+                        <a href="{{ route('home') }}" class="btn btn-primary"><i class="fa fa-home"></i> HOME</a>
+                    </div>
+                    <div class="col-lg-3">
                         <div class="input-group mb-2">
                             <div class="input-group-text">
                                 <div class=""><i class="fa fa-user-plus" style="color: #065a92;"></i></div>
@@ -221,7 +82,7 @@
                                 placeholder="Customer Name">
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="input-group mb-2">
                             <div class="input-group-text">
                                 <div class=""><i class="fa fa-phone" style="color: #065a92;"></i></div>
@@ -235,7 +96,8 @@
                             <div class="input-group-text">
                                 <div class=""><i class="fa fa-address-card" style="color: #065a92;"></i></div>
                             </div>
-                            <input class="form-control" name="customer_address" id="customer_address" placeholder="Customer Addresss">
+                            <input class="form-control" name="customer_address" id="customer_address"
+                                placeholder="Customer Addresss">
                         </div>
                     </div>
                 </div>
@@ -256,26 +118,26 @@
                                                     <div class="search_inner">
                                                         <form active="#">
                                                             <div class="search_field">
-                                                                <input type="text"
-                                                                    placeholder="Search content here...">
+                                                                <input id="product_search" type="text"
+                                                                    placeholder="Search Produc by product name...">
                                                             </div>
                                                             <button type="submit"> <i class="ti-search"></i>
                                                             </button>
                                                         </form>
                                                     </div>
                                                 </div>
-                                                <div class="add_button ms-2">
-                                                    <a href="#" data-bs-toggle="modal"
-                                                        data-bs-target="#addcategory" class="btn_1">search</a>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="white_card_body">
+                                    <div class="white_card_body" style="height: 120px;overflow:scroll">
                                         <div class="">
+                                            <button class="btn btn-outline-danger rounded-pill mb-3 all_product">All
+                                                Products</button>
                                             @foreach ($categories as $category)
                                                 <button type="button"
-                                                    class="btn btn-outline-primary rounded-pill mb-3 product_category" id="{{$category->id}}">{{ $category->name }}</button>
+                                                    class="btn btn-outline-primary rounded-pill mb-3 product_category"
+                                                    id="{{ $category->id }}">{{ $category->name }}</button>
                                             @endforeach
                                         </div>
 
@@ -284,64 +146,68 @@
                             </div>
 
                             <div class="col-md-12" style="height: 600px; overflow:scroll">
-                                <div class="row " id="category_products" >
+                                <div class="row " id="category_products">
                                     @foreach ($Products as $product)
-                                    @if ($product->quentity > 0)
-                                    <div class="col-md-3 mt-1">
-                                        <a id="{{ $product->id }}" class="product">
-                                            <div class="white_card position-relative mb_20 ">
-                                                <div class="card-body">
-                                                    <img src="{{ asset('storage/product_image/' . $product->image) }}"
-                                                        alt="" class="d-block mx-auto " height="60">
-                                                    <div class="row text-center ">
-                                                        <div class="col-12">
-                                                            <h6
-                                                                class="f_w_400 color_text_3 f_s_14 d-block this_product_name">{{ $product->name }}
-                                                            <h6>
+                                        @if ($product->quentity > 0)
+                                            <div class="col-md-3 mt-1">
+                                                <a id="{{ $product->id }}" class="product">
+                                                    <div class="white_card position-relative mb_20 ">
+                                                        <div class="card-body">
+                                                            <img src="{{ asset('storage/product_image/' . $product->image) }}"
+                                                                alt="" class="d-block mx-auto "
+                                                                height="60">
+                                                            <div class="row text-center ">
+                                                                <div class="col-12">
+                                                                    <h6
+                                                                        class="f_w_400 color_text_3 f_s_14 d-block this_product_name">
+                                                                        {{ $product->name }}
+                                                                        <h6>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <h4 style="display: inline-block"
+                                                                        class="text-dark mt-0">
+                                                                        <small>${{ $product->selling_price }}</small>
+                                                                    </h4>
+                                                                    <span style="display: inline-block"
+                                                                        class="badge badge-sm bg-danger ml-3 product_stock"
+                                                                        id="{{ $product->id }}">{{ $product->quentity }}</span>
+                                                                </div>
+                                                            </div>
+
                                                         </div>
-                                                        <div class="col-12">
-                                                            <h4 style="display: inline-block"
-                                                                class="text-dark mt-0">
-                                                                <small>${{ $product->selling_price }}</small>
-                                                            </h4>
-                                                            <span style="display: inline-block"
-                                                                class="badge badge-sm bg-danger ml-3 product_stock" id="{{$product->id}}" >{{ $product->quentity }}</span>
-                                                        </div>
+
                                                     </div>
-
-                                                </div>
-
+                                                </a>
                                             </div>
-                                        </a>
-                                    </div>
-                                    @else
-                                     <div class="col-md-3 mt-1">
-                                        <a id="{{ $product->id }}" class="product_out_of_stock">
-                                            <div class="white_card position-relative mb_20 ">
-                                                <div class="card-body">
-                                                    <img src="{{ asset('storage/product_image/' . $product->image) }}"
-                                                        alt="" class="d-block mx-auto " height="60">
-                                                    <div class="row text-center ">
-                                                        <div class="col-12">
-                                                            <a id="{{ $product->id }}" class="product"
-                                                                class="f_w_400 color_text_3 f_s_14 d-block">{{ $product->name }}</a>
+                                        @else
+                                            <div class="col-md-3 mt-1">
+                                                <a id="{{ $product->id }}" class="product_out_of_stock">
+                                                    <div class="white_card position-relative mb_20 ">
+                                                        <div class="card-body">
+                                                            <img src="{{ asset('storage/product_image/' . $product->image) }}"
+                                                                alt="" class="d-block mx-auto "
+                                                                height="60">
+                                                            <div class="row text-center ">
+                                                                <div class="col-12">
+                                                                    <a id="{{ $product->id }}" class="product"
+                                                                        class="f_w_400 color_text_3 f_s_14 d-block">{{ $product->name }}</a>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <h4 style="display: inline-block"
+                                                                        class="text-dark mt-0">
+                                                                        <small>${{ $product->selling_price }}</small>
+                                                                    </h4>
+                                                                    <span style="display: inline-block"
+                                                                        class="badge badge-sm bg-danger ml-3">{{ $product->quentity }}</span>
+                                                                </div>
+                                                            </div>
+
                                                         </div>
-                                                        <div class="col-12">
-                                                            <h4 style="display: inline-block"
-                                                                class="text-dark mt-0">
-                                                                <small>${{ $product->selling_price }}</small>
-                                                            </h4>
-                                                            <span style="display: inline-block"
-                                                                class="badge badge-sm bg-danger ml-3">{{ $product->quentity }}</span>
-                                                        </div>
+
                                                     </div>
-
-                                                </div>
-
+                                                </a>
                                             </div>
-                                        </a>
-                                    </div>
-                                    @endif
+                                        @endif
                                     @endforeach
                                 </div>
                             </div>
@@ -366,8 +232,9 @@
 
                                         </tbody>
                                     </table>
-                                    <div id="cart_item" style="height: 300px; overflow:scroll">
-
+                                    <div id="cart_item" style="height: 300px; overflow:scroll;justify-content:center">
+                                        <img style="" class="empty_cart"
+                                            src="{{ asset('assets/img/emptyCart.png') }}" alt="">
                                     </div>
                                 </div>
                                 <div class="row justify-content-end mt_30">
@@ -378,7 +245,8 @@
                                                 <tbody>
                                                     <tr>
                                                         <td class="payment-title">Subtotal</td>
-                                                        <td>$ <span class="sub_total">0</span><input type="hidden" class="purchasing_total"></td>
+                                                        <td>$ <span class="sub_total">0</span><input type="hidden"
+                                                                class="purchasing_total"></td>
 
                                                     </tr>
                                                     <tr>
@@ -396,7 +264,7 @@
 
                                                     <tr>
                                                         <td colspan="3">
-                                                            <button type="button"
+                                                            <button onclick="window.location.reload()" type="button"
                                                                 class="btn btn-danger rounded-pill mb-3">Suspend</button>
                                                             <button id="paymetn_button" type="button"
                                                                 class="btn btn-success rounded-pill mb-3">Payment</button>
@@ -417,8 +285,8 @@
                         </div>
 
                     </div>
-
                 </div>
+
             </div>
         </div>
 
@@ -481,6 +349,92 @@
         </div>
     </div>
 
+        <div class="modal" id="myModal">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                {{-- <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" style="display:inline-block;margin-right:10px">Invoice</h4> <button
+                        class="ml-3 btn btn-sm btn-outline-primary print_btn"><i class="fa fa-print"></i> ptint</button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div> --}}
+
+                <!-- Modal body -->
+                <div class="modal-body" >
+                     <div class="card-body invoice">
+                    <div class="row mb-4">
+                        <div class="col-sm-6">
+                            <h6 class="mb-3">From:</h6>
+                            <div>
+                                <strong>New Grocery</strong>
+                            </div>
+                            <div>71-101 Szczecin, England</div>
+                            <div>Phone: +0000</div>
+                            <h6>Invoice NO : <span class="invoice_no"></span></h6>
+                        </div>
+                        <div class="col-sm-6">
+                            <h6 class="mb-3">To:</h6>
+                            <div>
+                                <strong class="customer_name"></strong>
+                            </div>
+                            <div class="customer_address"></div>
+                            <div>Phone: <span class="customer_phone"></span></div>
+                        </div>
+                    </div>
+                    <div class="table-responsive-sm">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="center">#</th>
+                                    <th>Item</th>
+                                    <th class="right">Unit Cost</th>
+                                    <th class="center">Qty</th>
+                                    <th class="right">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="order_details">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-5">
+                        </div>
+                        <div class="col-lg-4 col-sm-5 ms-auto QA_section">
+                            <table class="table table-clear QA_table">
+                                <tbody>
+                                    <tr>
+                                        <td class="left">
+                                            <strong>Subtotal</strong>
+                                        </td>
+                                        <td class="right">$ <span class="invoice_sub_total"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left">
+                                            <strong>Discount ( <span class="discount_parcent"></span> %)</strong>
+                                        </td>
+                                        <td class="right">$ <span class="discount_amount"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left">
+                                            <strong>Total</strong>
+                                        </td>
+                                        <td class="right">
+                                            <strong>$ <span class="invoice_grand_total"></span></strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
     <script src="{{ asset('assets') }}/js/jquery1-3.4.1.min.js"></script>
@@ -536,9 +490,11 @@
 
     {{-- toastr js --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    {{-- jquery ui  --}}
-     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    {{-- jquery ui --}}
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    {{-- pirnt cdn --}}
+    <script src="{{ asset('assets/js/jQuery.print.js') }}"></script>
     <script>
         $('#customer').select2({
             placeholder: 'select a customer',
@@ -548,8 +504,8 @@
 
     <script>
         $(document).ready(function() {
-        //    product add to cart
-            $(document).on('click','.product', function(e) {
+            //    product add to cart
+            $(document).on('click', '.product', function(e) {
                 e.preventDefault();
                 var id = $(this).attr('id');
                 $.ajaxSetup({
@@ -596,13 +552,17 @@
                                 '<span class="text-muted font_s_13"></span></p>' +
                                 '</td>' +
                                 '<td>$<span class="item_price">' + per_pices_price +
-                                '</span><input type="hidden" class="product_purchasing_price" value="'+product_purchasing_price+'"></td>' +
+                                '</span><input type="hidden" class="product_purchasing_price" value="' +
+                                product_purchasing_price + '"></td>' +
                                 '<td><input class="form-control w cart_quentity" type="number" value="1"' +
-                                'id="example-number-input1" max="'+quentity+'"></td>' +
+                                'id="example-number-input1" max="' + quentity + '"></td>' +
                                 '<td><span class="item_total">' + per_pices_price +
-                                '</span><input type="hidden" class="product_purchasing_total" value="'+product_purchasing_price+'"></td></td>' +
+                                '</span><input type="hidden" class="product_purchasing_total" value="' +
+                                product_purchasing_price + '"></td></td>' +
                                 '<td><a href="www.facebook.com" id="" class="text-dark cart_item_delete"><i  class="far fa-times-circle font_s_18"></i></a></td>' +
                                 '  </tr>'
+
+                            $('.empty_cart').addClass('d-none');
                             $('#cart_item').append(cart_row);
                             // }
                         }
@@ -620,7 +580,7 @@
                 });
             });
             // product out of strock
-            $('.product_out_of_stock').click(function(e){
+            $('.product_out_of_stock').click(function(e) {
                 toastr.error('This Product Out Of Storck!');
             });
             //quetntiy increment or decrement
@@ -629,12 +589,14 @@
                 if (quentity > 0) {
                     var item_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
                         '.item_price').text());
-                    var product_purchasing_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
-                        '.product_purchasing_price').val());
+                    var product_purchasing_price = parseInt($(this).closest('tr').find('td:nth-child(2)')
+                        .find(
+                            '.product_purchasing_price').val());
                     var product_total = quentity * item_price;
                     var product_purchasing_total = quentity * product_purchasing_price;
                     $(this).closest('tr').find('td:nth-child(4)').find('.item_total').text(product_total);
-                    $(this).closest('tr').find('td:nth-child(4)').find('.product_purchasing_total').val(product_purchasing_total);
+                    $(this).closest('tr').find('td:nth-child(4)').find('.product_purchasing_total').val(
+                        product_purchasing_total);
                     cart_total();
                     grand_total();
                 } else {
@@ -648,41 +610,49 @@
                 if (quentity > 0 && quentity <= max) {
                     var item_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
                         '.item_price').text());
-                    var product_purchasing_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
-                        '.product_purchasing_price').val());
+                    var product_purchasing_price = parseInt($(this).closest('tr').find('td:nth-child(2)')
+                        .find(
+                            '.product_purchasing_price').val());
                     var product_total = quentity * item_price;
                     var product_purchasing_total = quentity * product_purchasing_price;
                     $(this).closest('tr').find('td:nth-child(4)').find('.item_total').text(product_total);
-                    $(this).closest('tr').find('td:nth-child(4)').find('.product_purchasing_total').val(product_purchasing_total);
+                    $(this).closest('tr').find('td:nth-child(4)').find('.product_purchasing_total').val(
+                        product_purchasing_total);
                     cart_total();
                     grand_total();
                 } else {
-                    if(quentity > max){
-                       toastr.error('Only '+max+' products in stock!');
-                       $(this).val(max);
-                               var item_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
-                        '.item_price').text());
-                    var product_purchasing_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
-                        '.product_purchasing_price').val());
-                    var product_total = quentity * item_price;
-                    var product_purchasing_total = quentity * product_purchasing_price;
-                    $(this).closest('tr').find('td:nth-child(4)').find('.item_total').text(product_total);
-                    $(this).closest('tr').find('td:nth-child(4)').find('.product_purchasing_total').val(product_purchasing_total);
-                    cart_total();
-                    grand_total();
-                    }else{
-                    $(this).val('1');
-                     var quentity =$(this).val();
-                    var item_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
-                        '.item_price').text());
-                    var product_purchasing_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
-                        '.product_purchasing_price').val());
-                    var product_total = quentity * item_price;
-                    var product_purchasing_total = quentity * product_purchasing_price;
-                    $(this).closest('tr').find('td:nth-child(4)').find('.item_total').text(product_total);
-                    $(this).closest('tr').find('td:nth-child(4)').find('.product_purchasing_total').val(product_purchasing_total);
-                    cart_total();
-                    grand_total();
+                    if (quentity > max) {
+                        toastr.error('Only ' + max + ' products in stock!');
+                        $(this).val(max);
+                        var item_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
+                            '.item_price').text());
+                        var product_purchasing_price = parseInt($(this).closest('tr').find(
+                            'td:nth-child(2)').find(
+                            '.product_purchasing_price').val());
+                        var product_total = quentity * item_price;
+                        var product_purchasing_total = quentity * product_purchasing_price;
+                        $(this).closest('tr').find('td:nth-child(4)').find('.item_total').text(
+                            product_total);
+                        $(this).closest('tr').find('td:nth-child(4)').find('.product_purchasing_total').val(
+                            product_purchasing_total);
+                        cart_total();
+                        grand_total();
+                    } else {
+                        $(this).val('1');
+                        var quentity = $(this).val();
+                        var item_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
+                            '.item_price').text());
+                        var product_purchasing_price = parseInt($(this).closest('tr').find(
+                            'td:nth-child(2)').find(
+                            '.product_purchasing_price').val());
+                        var product_total = quentity * item_price;
+                        var product_purchasing_total = quentity * product_purchasing_price;
+                        $(this).closest('tr').find('td:nth-child(4)').find('.item_total').text(
+                            product_total);
+                        $(this).closest('tr').find('td:nth-child(4)').find('.product_purchasing_total').val(
+                            product_purchasing_total);
+                        cart_total();
+                        grand_total();
                     }
 
                 }
@@ -781,10 +751,14 @@
                 cart_total();
                 grand_total();
                 var cart_product_name = $('#cart_item .cart_product_name');
-                if(cart_product_name.length == 0){
+                if (cart_product_name.length == 0) {
                     $('.sub_total').text('0');
                     $('.purchasing_total').val('0');
-                     $('.grand_total').text(0);
+                    $('.grand_total').text(0);
+                }
+                var cart_product_name = $('#cart_item .cart_product_name');
+                if (cart_product_name.length == 0) {
+                    $('.empty_cart').removeClass('d-none');
                 }
             });
 
@@ -822,105 +796,158 @@
 
                 });
             });
+            //product_category
+            $(document).on('click', '.product_category', function() {
+                var id = $(this).attr('id');
+                $.ajax({
+                    type: 'get',
+                    url: "{{ route('admin.category.product') }}",
+                    data: {
+                        'id': id
+                    },
+                    success: function(response) {
+                        $('#category_products').html(response);
+                    }
+                });
+            });
+            //all product
+            all_product();
 
+            function all_product() {
+                $(document).on('click', '.all_product', function() {
+                    $.ajax({
+                        type: 'get',
+                        url: "{{ route('admin.product.all') }}",
+                        success: function(response) {
+                            $('#category_products').html(response);
+                        }
+                    });
+                });
+            }
+            //porduct search
+            $(document).on('keyup', '#product_search', function() {
+                var data = $(this).val();
+                $.ajax({
+                    type: 'get',
+                    url: "{{ route('admin.pos.product.search') }}",
+                    data: {
+                        'data': data
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        $('#category_products').html(response);
+                        if (response.null) {
 
-            // customer name
-            // $.ajax({
-            //     type:'get',
-            //     url:"{{route('admin.customer.number')}}",
-            //     success:function(response){
-            //          $("#customer_number").autocomplete({source: response});
-            //         console.log(response);
-            //     }
-            // });
+                        }
+                    }
+
+                });
+            });
+
 
 
             //payment
-            $(document).on('click', '#paymetn_button', function(){
+            $(document).on('click', '#paymetn_button', function() {
                 var order_details = [];
+                var i = 1;
                 $("#cart_item tr").each(function() {
                     var name = $(this).find('td').find('.cart_product_name').text();
-                    var product_purchasing_price = $(this).find('td').find('.product_purchasing_price').val();
+                    var product_purchasing_price = $(this).find('td').find(
+                        '.product_purchasing_price').val();
                     var sell_price = $(this).find('td').find('.item_price').text();
                     var product_total = $(this).find('td').find('.item_total').text();
-                    var product_purchasing_total = $(this).find('td').find('.product_purchasing_total').val();
+                    var product_purchasing_total = $(this).find('td').find(
+                        '.product_purchasing_total').val();
                     var quentity = $(this).find('td').find('.cart_quentity').val();
 
                     order_details.push({
                         name: name,
-                        product_purchasing_price:product_purchasing_price,
+                        product_purchasing_price: product_purchasing_price,
                         sell_price: sell_price,
                         quentity: quentity,
-                        product_purchasing_total:product_purchasing_total,
+                        product_purchasing_total: product_purchasing_total,
                         product_selling_total: product_total,
                     });
-                });
-                var customer_info ={
-                    customer_name:$('#customer_name').val(),
-                    customer_number:$('#customer_number').val(),
-                    customer_address:$('#customer_address').val(),
-                };
 
+                    //invoice
+                    var invoice_order_details = '<tr>' +
+                        '<td class="center">' + i + '</td>' +
+                        '<td class="left strong">' + name + '</td>' +
+                        '<td class="right">$' + sell_price +
+                        '</td>' +
+                        '<td class="center">' + quentity + '</td>' +
+                        '<td class="right">$' + product_total +
+                        '</td>' +
+                        ' </tr>'
+                    $('#order_details').append(invoice_order_details);
+                    i += i;
+                });
+                var customer_info = {
+                    customer_name: $('#customer_name').val(),
+                    customer_number: $('#customer_number').val(),
+                    customer_address: $('#customer_address').val(),
+                };
+                //customer informatin for invoice;
+                $('.customer_name').text($('#customer_name').val());
+                $('.customer_address').text($('#customer_address').val());
+                $('.customer_phone').text($('#customer_number').val());
                 var product_quentity = 0;
-                $('#cart_item .cart_quentity').each(function(){
+                $('#cart_item .cart_quentity').each(function() {
                     product_quentity += parseInt($(this).val());
                 });
-
+                 var invoice_no = Math.floor(Math.random() * 1000000000);
+                 $('.invoice_no').text(invoice_no);
                 var order = {
-                    product_quentity:product_quentity,
+                    product_quentity: product_quentity,
                     sub_total: $('.sub_total').text(),
-                    discount:$('.discount').val(),
-                    purchasing_total:$('.purchasing_total').val(),
-                    grand_total:$('.grand_total').text(),
+                    discount: $('.discount').val(),
+                    purchasing_total: $('.purchasing_total').val(),
+                    grand_total: $('.grand_total').text(),
+                    invoice_no:invoice_no,
                 };
+                console.log(order);
+                //order details for invoice order status
+                $('.invoice_sub_total').text($('.sub_total').text());
+                $('.invoice_grand_total').text($('.grand_total').text());
+                var discount_amount = ($('.discount').val() * $('.sub_total').text()) / 100;
+                $('.discount_amount').text(discount_amount.toFixed());
+
                 var customer_name = $('#customer_name').val();
                 var customer_number = $('#customer_number').val();
                 var customer_address = $('#customer_address').val();
-                var sub_total =$('.sub_total').text();
-                // alert(sub_total);
-                // alert(!isNaN(customer_name));
-                // if(isNaN(sub_total)){
-                    console.log(order_details);
-                    $.ajax({
-                        type: 'get',
-                        url: "{{ route('admin.test') }}",
-                        data: {
-                            'order':order,
-                            'order_details':order_details,
-                            // 'customer_info':customer_info,
-                            'customer_name':customer_name,
-                            'customer_number':customer_number,
-                            'customer_address':customer_address,
+                var sub_total = $('.sub_total').text();
 
-                        },
-                        success: function(response) {
-                            if(response.success){
-                                // toastr.warning('customer name and number required');
-                                console.log(response);
-                            }
-                            if(response.fails){
-                                toastr.warning('customer name and number required');
-                            }
+
+
+                $.ajax({
+                    type: 'get',
+                    url: "{{ route('admin.test') }}",
+                    data: {
+                        'order': order,
+                        'order_details': order_details,
+                        'customer_name': customer_name,
+                        'customer_number': customer_number,
+                        'customer_address': customer_address,
+
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            toastr.success('order_complete!');
+                            $('.invoice').print();
+                            $('#product').load(location.href);
+
                         }
-                    });
+                        if (response.fails) {
+                            toastr.warning('customer name and number required');
+                        }
+                    }
+                });
                 // }else{
                 //    toastr.warning('Please Enter Customer Name And Contact Number.');
                 // }
             });
 
-            //product_category
-            $(document).on('click', '.product_category', function(){
-                var id = $(this).attr('id');
-                $.ajax({
-                    type:'get',
-                    url:"{{route('admin.category.product')}}",
-                    data:{'id':id},
-                    success:function(response){
-                        // console.log(response);
-                        $('#category_products').html(response);
-                    }
-                });
-            });
+
         });
     </script>
 

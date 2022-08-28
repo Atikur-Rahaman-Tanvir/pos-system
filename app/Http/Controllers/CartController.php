@@ -8,6 +8,7 @@ use App\Models\Order_Detail;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use phpDocumentor\Reflection\Location;
 
 class CartController extends Controller
 {
@@ -33,7 +34,7 @@ class CartController extends Controller
         if(!$validator->fails()){
             //insert data in order table
             $order = new Order();
-            $order->invoice_no =uniqid(50);
+            $order->invoice_no =$request->order['invoice_no'];
             $order->product_quentity = $request->order['product_quentity'];
             $order->sub_total = $request->order['sub_total'];
             $order->discount = $request->order['discount'];
@@ -69,10 +70,9 @@ class CartController extends Controller
                 if($order_deltais_save){
                    Product::where('name', $order_details->product_name)->decrement('quentity', $order_details->product_quentity);
                    Product::where('name', $order_details->product_name)->increment('sell_quentity', $order_details->product_quentity);
-                //   $product = Product::where('name', $order_details->product_name)->get();
-                //    return response()->json(['success' => $product]);
                 }
             }
+            return response()->json(['success' => 'order_complete']);
         }
         else{
             return response()->json(['fails' => $validator->errors()]);

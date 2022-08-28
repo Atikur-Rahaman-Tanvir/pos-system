@@ -18,9 +18,9 @@
 
 <body class="crm_body_bg">
 
-    @include('admin.layouts.partials.sidebar')
+    {{-- @include('admin.layouts.partials.sidebar') --}}
 
-    <section class="main_content dashboard_part large_header_bg">
+    <section class="main_content dashboard_part large_header_bg" style="padding-left:0">
         @include('admin.layouts.partials.header')
         @yield('content')
         @include('admin.layouts.partials.footer')

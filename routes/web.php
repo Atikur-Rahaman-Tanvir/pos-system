@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\posController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function(){
     Route::get('pos',[posController::class, 'index'])->name('pos.index');
     Route::get('categoy/product',[posController::class, 'category_product'])->name('category.product');
+    Route::get('all/product', [posController::class, 'all_product'])->name('product.all');
+    Route::get('pos/product/search', [posController::class, 'product_search'])->name('pos.product.search');
 
     //category
     Route::get('category', [categoryController::class, 'index'])->name('category.index');
@@ -47,6 +50,21 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     Route::get('product/delete', [ProductController::class, 'delete'])->name('product.delete');
     Route::get('product/status', [ProductController::class, 'status'])->name('product.status');
     Route::get('product/search', [ProductController::class, 'search'])->name('product.search');
+    Route::get('product/print', [ProductController::class, 'print'])->name('product.print');
+
+
+
+    Route::get('bill',[ReportController::class, 'bill'])->name('bill');
+    Route::get('bill/fetch',[ReportController::class, 'bill_fetch'])->name('bill.fetch');
+    Route::get('bill/search',[ReportController::class, 'bill_search'])->name('bill.search');
+    Route::get('bill/invoice',[ReportController::class, 'bill_invoice'])->name('bill.invoice');
+    Route::get('bill/delete',[ReportController::class, 'bill_delete'])->name('bill.delete');
+
+    Route::get('report', [ReportController::class, 'report'])->name('report');
+    Route::get('monthly/report', [ReportController::class, 'monthly_report'])->name('monthly.report');
+    Route::get('yearly/report', [ReportController::class, 'yearly_report'])->name('yearly.report');
+
+
 
     // add to cart
     Route::get('add/to/cart', [CartController::class, 'add'])->name('add.to.cart');

@@ -142,4 +142,13 @@ class ProductController extends Controller
             return response()->json(['not_found' => 'No Data Found.', 'search' => $request->search]);
         }
     }
+
+    //print
+    public function print(){
+        $products = Product::latest()->get();
+        return view('admin.pages.product.search', compact('products'));
+    }
+
+    
+
 }

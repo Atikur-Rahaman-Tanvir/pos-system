@@ -5,6 +5,8 @@
 @section('styles')
     {{-- select2 --}}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
     <style>
         .fa,
         .far,
@@ -32,10 +34,8 @@
                                                 <div class="search_field">
                                                     <input type="text" placeholder="Search content here..."
                                                         id="search_box" name="search">
-
                                                 </div>
                                                 <button type="submit"> <i class="ti-search"></i> </button>
-
                                             </div>
                                         </div>
                                         <div class="add_button ms-2">
@@ -47,7 +47,6 @@
                                     </div>
                                 </div>
                                 <div class="QA_table mb_30" id="data_table">
-
                                     <table class="table lms_table_active3 text-center">
                                         <thead>
                                             <tr>
@@ -334,6 +333,9 @@
 
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        {{-- pirnt cdn  --}}
+<script src="{{asset('assets/js/jQuery.print.js')}}"></script>
+
 
     <script>
         $(document).ready(function() {
@@ -500,7 +502,6 @@
                     }
                 })
             });
-
         });
     </script>
     <script>
