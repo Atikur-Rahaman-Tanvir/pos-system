@@ -52,7 +52,7 @@
                         <div class="white_card_body">
                             <a href="{{route('admin.product.index')}}"><button class="btn btn-outline-info" style="width: 150px;height: 150px;margin-right:30px">
                                 <i class="fa fa-cube fa-4x"></i>
-                                <div class="mt-2">Products</div>
+                                <div class="mt-2">Inventory</div>
                             </button></a>
                             <a href="{{route('admin.category.index')}}"> <button class="btn btn-outline-info" style="width: 150px;height: 150px;margin-right:30px">
                                 <i class="fas fa-tags fa-4x"></i>
@@ -65,6 +65,14 @@
                             <a href="{{route('admin.report')}}"> <button class="btn btn-outline-info" style="width: 150px;height: 150px;margin-right:30px">
                                <i class="fa fa-file fa-4x"></i>
                                 <div class="mt-2">Report</div>
+                            </button><a>
+                            <a href="{{route('admin.expencese.index')}}"> <button class="btn btn-outline-info" style="width: 150px;height: 150px;margin-right:30px">
+                               <i class="fa fa-cubes fa-4x"></i>
+                                <div class="mt-2">Daily Expencese</div>
+                            </button><a>
+                            <a href="{{route('admin.expencese.report')}}"> <button class="btn btn-outline-info" style="width: 150px;height: 150px;margin-right:30px">
+                               <i class="fa fa-cubes fa-4x"></i>
+                                <div class="mt-2">Expencese Report</div>
                             </button><a>
                         </div>
                     </div>

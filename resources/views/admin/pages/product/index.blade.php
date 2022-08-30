@@ -19,6 +19,51 @@
     <div class="main_content_iner ">
         <div class="container-fluid p-0">
             <div class="row justify-content-center">
+                <div class="col-xl-12">
+                    <div class="white_card  mb_30">
+
+                        <div class="white_card_body  p-4">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div class="single_analite_content text-center" >
+                                        <h6>Types of Product</h6>
+                                        <h3><span class="counter">{{$products->count()}}</span> </h3>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="single_analite_content text-center">
+                                        <h6>Out Of Stock</h6>
+                                        <h3><span class="counter">{{$products->where('quentity', false)->count()}}</span> </h3>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="single_analite_content text-center">
+                                        <h6>Products In Stock</h6>
+                                        <h3><span class="counter">{{$products->sum('quentity')}}</span> <small style="font-size:16px">pcs</small> </h3>
+                                    </div>
+                                </div>
+                                  <div class="col-lg-2">
+                                    <div class="single_analite_content text-center">
+                                        <h6>Total purchasing Price</h6>
+                                    <h3>$<span class="counter">{{$products->sum('purchasing_price')}}</span> </h3>
+                                    </div>
+                                </div>
+                                  <div class="col-lg-2">
+                                    <div class="single_analite_content text-center">
+                                        <h6>Total Selling Price</h6>
+                                    <h3>$<span class="counter">{{$products->sum('selling_price')}}</span> </h3>
+                                    </div>
+                                </div>
+                                  <div class="col-lg-2">
+                                    <div class="single_analite_content text-center">
+                                        <h6>Profit</h6>
+                                    <h3>$<span class="counter">{{$products->sum('selling_price') - $products->sum('purchasing_price')}}</span> </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="col-lg-12">
                     <div class="white_card card_height_100 mb_30">
@@ -71,10 +116,11 @@
                                                             src="{{ asset('storage/product_image/' . $product->image) }}"
                                                             alt=""></td>
                                                     <td>{{ $product->name }}</td>
-                                                    <td>{{ $product->purchasing_price }}</td>
-                                                    <td>{{ $product->selling_price }}</td>
-                                                    <td>{{ $product->quentity }}</td>
-                                                    <td>{{ $product->sell_quentity }}</td>
+                                                    <td>${{ $product->purchasing_price }}</td>
+                                                    <td>${{ $product->selling_price }}</td>
+
+                                                    <td class="{{($product->quentity == 0 ? 'bg-danger text-white': '')}}{{($product->quentity <= 5 ? 'bg-warning text-white': '')}}">{{ $product->quentity }} pcs</td>
+                                                    <td>{{ $product->sell_quentity }} pcs</td>
                                                     <td>
                                                         @if ($product->status == 0)
                                                             <span class="badge badge-danger">Pending</span>
@@ -87,7 +133,8 @@
                                                         <div class="action_btns d-flex">
 
 
-                                                            <a id="{{ $product->id }}" class="action_btn mr_10 status "> <i
+                                                            <a id="{{ $product->id }}" class="action_btn mr_10 status ">
+                                                                <i
                                                                     class="{{ $product->status == 0 ? 'far fa-eye-slash' : 'fa fa-eye' }}"></i>
                                                             </a>
 
@@ -333,8 +380,8 @@
 
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-        {{-- pirnt cdn  --}}
-<script src="{{asset('assets/js/jQuery.print.js')}}"></script>
+    {{-- pirnt cdn --}}
+    <script src="{{ asset('assets/js/jQuery.print.js') }}"></script>
 
 
     <script>
@@ -506,9 +553,10 @@
     </script>
     <script>
         $('#category').select2({
-
             dropdownParent: $('#insert_modal')
-
+        });
+        $('#edit_category').select2({
+            dropdownParent: $('#edit_modal')
         });
     </script>
 @endsection

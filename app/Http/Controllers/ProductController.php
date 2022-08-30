@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = product::latest()->get();
+        $products = product::orderBy('name', 'ASC')->get();
         return view('admin.pages.product.index', compact('products'));
     }
     //store
@@ -149,6 +149,6 @@ class ProductController extends Controller
         return view('admin.pages.product.search', compact('products'));
     }
 
-    
+
 
 }

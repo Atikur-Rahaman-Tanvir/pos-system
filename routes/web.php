@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\categoryController;
+use App\Http\Controllers\Expenceses;
 use App\Http\Controllers\posController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReportController;
@@ -73,6 +75,21 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
 
     Route::get('customer/name',[CartController::class, 'customer_name'])->name('customer.name');
     Route::get('customer/number',[CartController::class, 'customer_number'])->name('customer.number');
+
+    //Expenceses
+    Route::get('expencese', [Expenceses::class, 'index'])->name('expencese.index');
+    Route::post('expencese/store', [Expenceses::class, 'store'])->name('expencese.store');
+    Route::get('expencese/show', [Expenceses::class, 'show'])->name('expencese.show');
+    Route::post('expencese/edit', [Expenceses::class, 'edit'])->name('expencese.edit');
+    Route::get('expencese/delete', [Expenceses::class, 'delete'])->name('expencese.delete');;
+    Route::get('expencese/search', [Expenceses::class, 'search'])->name('expencese.search');
+    Route::get('expencese/print', [Expenceses::class, 'print'])->name('expencese.print');
+
+    //Expencese Report
+    Route::get('expencese/report', [Expenceses::class, 'report'])->name('expencese.report');
+    Route::get('expencese/monthly/report', [Expenceses::class, 'monthly_report'])->name('expencese.monthly.report');
+    Route::get('expencese/yearly/report', [Expenceses::class, 'yearly_report'])->name('expencese.yearly.report');
+
 
 
 });

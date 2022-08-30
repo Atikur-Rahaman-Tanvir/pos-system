@@ -1,49 +1,51 @@
-   <h5 class="show_date">{{$show_date}}</h5>
- <table class="table  text-center">
-     <thead>
-         <tr>
-             <th scope="col">Sl No</th>
-             <th scope="col">Date</th>
-             <th scope="col">Quentity</th>
-             <th scope="col">Purchasing Total</th>
-             <th scope="col">Grand Total</th>
-             <th scope="col">Calculation</th>
-         </tr>
-     </thead>
+  <h5 class="show_date">{{$show_date}}</h5>
+                                    <table class="table  text-center">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Sl No</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Quentity</th>
+                                                <th scope="col">Grand Total</th>
+                                                <th scope="col">Purchasing Total</th>
+                                                <th scope="col">Expencese</th>
+                                                <th scope="col">Calculation</th>
+                                            </tr>
+                                        </thead>
 
-     <tbody id="table_body">
-         @foreach ($orders as $order)
-             <tr>
-                 <td>{{ $loop->index + 1 }}</td>
-                 <td>{{ $order->day }}</td>
-                 <td>{{ $order->product_quentity }}</td>
-                 <td>${{ $order->purchasing_total }}</td>
-                 <td>${{ $order->grand_total }}</td>
-                 @if ($order->grand_total > $order->purchasing_total)
-                     <td>${{ $order->grand_total - $order->purchasing_total }} <span class="badge bg-success text-white">
-                             Profit</span></td>
-                 @else
-                     <td>${{ $order->purchasing_total - $order->grand_total }} <span class="badge bg-danger text-white">
-                             lose</span></td>
-                 @endif
-             </tr>
-         @endforeach
-         @if ($orders->sum('grand_total') != 0)
-             <tr>
-                 <td colspan="2"><span class="text-danger">Total</span></td>
-                 <td><span class="text-danger">{{ $orders->sum('product_quentity') }}</span></td>
-                 <td><span class="text-danger">${{ $orders->sum('purchasing_total') }}</span></td>
-                 <td><span class="text-danger">${{ $orders->sum('grand_total') }}</span></td>
-                 @if ($orders->sum('grand_total') > $orders->sum('purchasing_total'))
-                     <td><span
-                             class="text-danger">${{ $orders->sum('grand_total') - $orders->sum('purchasing_total') }}</span>
-                         <span class="badge bg-success text-white"> Profit</span></td>
-                 @else
-                     <td><span
-                             class="text-danger">${{ $orders->sum('purchasing_total') - $orders->sum('grand_total') }}</span>
-                         <span class="badge bg-danger text-white"> lose</span></td>
-                 @endif
-             </tr>
-         @endif
-     </tbody>
- </table>
+                                        <tbody id="table_body">
+                                            @foreach ($orders as $key=>$order)
+                                                <tr>
+                                                    <td>{{ $loop->index + 1 }}</td>
+                                                    {{-- <td>{{ $order->day->format('')}}</td> --}}
+                                                    <td>{{Carbon\Carbon::parse($order->day)->format('d M Y') }}</td>
+                                                    <td>{{ $order->product_quentity }} pcs</td>
+                                                    <td>${{ $order->grand_total }}</td>
+                                                    <td>${{ $order->purchasing_total }}</td>
+                                                    <td>${{App\Models\Expencese::select('amount')->whereDate('created_at', $order->day)->sum('amount')}}</td>
+
+                                                    @if ($order->grand_total > $order->purchasing_total+App\Models\Expencese::select('amount')->whereDate('created_at', $order->day)->sum('amount'))
+                                                        <td >${{$order->grand_total - ($order->purchasing_total+App\Models\Expencese::select('amount')->whereDate('created_at', $order->day)->sum('amount'))}} <span class="badge bg-success text-white"> Profit</span></td>
+                                                        @else
+                                                        <td >${{($order->purchasing_total+App\Models\Expencese::select('amount')->whereDate('created_at', $order->day)->sum('amount'))- $order->grand_total}} <span class="badge bg-danger text-white"> lose</span></td>
+                                                    @endif
+                                                </tr>
+                                            @endforeach
+                                            @if ($orders->sum('grand_total') != 0)
+                                            <tr>
+
+                                                <td colspan="2"><span class="text-danger">Total</span></td>
+                                                <td><span class="text-danger">{{$orders->sum('product_quentity')}} pcs</span></td>
+                                                <td><span class="text-danger">${{$orders->sum('grand_total')}}</span></td>
+                                                <td><span class="text-danger">${{$orders->sum('purchasing_total')}}</span></td>
+
+                                                 <td><span class="text-danger">${{App\Models\Expencese::select('amount')->whereMonth('created_at', $search_month)->sum('amount')}}</span></td>
+
+                                                    @if ($orders->sum('grand_total') > $orders->sum('purchasing_total')+App\Models\Expencese::select('amount')->whereMonth('created_at', $search_month)->sum('amount'))
+                                                        <td ><span class="text-danger">${{$orders->sum('grand_total') -( $orders->sum('purchasing_total')+App\Models\Expencese::select('amount')->whereMonth('created_at', $search_month)->sum('amount'))}}</span> <span class="badge bg-success text-white"> Profit</span></td>
+                                                        @else
+                                                        <td ><span class="text-danger">${{( $orders->sum('purchasing_total')+App\Models\Expencese::select('amount')->whereMonth('created_at',$search_month)->sum('amount')) - $orders->sum('grand_total')}}</span> <span class="badge bg-danger text-white"> lose</span></td>
+                                                    @endif
+                                            </tr>
+                                                @endif
+                                        </tbody>
+                                    </table>

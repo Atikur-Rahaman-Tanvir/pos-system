@@ -1,21 +1,5 @@
- <div class="QA_table mb_30" id="data_table">
-     <h6 class="bg-danger text-white p-2" style="width: 150px;display:inline-block">Totla Bill : <span
-             class="badge">${{ $orders->count() }}</span></h6>
-     <h6 class="bg-success text-white p-2" style="width: 250px;display:inline-block">Purchasing Total : <span
-             class="badge">${{ $orders->sum('purchasing_total') }}</span></h6>
-     <h6 class="bg-primary text-white p-2" style="width: 250px;display:inline-block">Selling Total : <span
-             class="badge">${{ $orders->sum('grand_total') }}</span></h6>
 
-     @if ($orders->sum('grand_total') < $orders->sum('purchasing_total'))
-         <h6 class="bg-danger text-white p-2" style="width: 200px;display:inline-block">Loss : <span
-                 class="badge">${{ $orders->sum('purchasing_total') - $orders->sum('grand_total') }}</span></h6>
-     @elseif ($orders->sum('grand_total') == $orders->sum('purchasing_total'))
-         <h6 class="bg-danger text-white p-2" style="width: 200px;display:inline-block">No profit No loss</span></h6>
-     @else
-         <h6 class="bg-danger text-white p-2" style="width: 200px;display:inline-block">Profit : <span
-                 class="badge">${{ $orders->sum('grand_total') - $orders->sum('purchasing_total') }}</span></h6>
-     @endif
-     <table class="table lms_table_active3 text-center">
+ <table class="table lms_table_active3 text-center">
          <thead>
              <tr>
                  <th scope="col">Sl No</th>
@@ -56,4 +40,3 @@
              @endforeach
          </tbody>
      </table>
- </div>

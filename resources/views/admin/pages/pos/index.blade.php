@@ -70,8 +70,9 @@
             <div class="container-fluid p-0 ">
 
                 <div class="row mb-2">
-                    <div class="col-lg-2">
-                        <a href="{{ route('home') }}" class="btn btn-primary"><i class="fa fa-home"></i> HOME</a>
+                    <div class="col-lg-3">
+                        <a href="{{ route('home') }}" class="btn btn-danger" style="margin-right: 3px;"><i class="fa fa-home"></i> HOME</a>
+                        <a href="{{ route('admin.product.index') }}" class="btn btn-primary"><i class="fa fa-cube "></i> Inventory</a>
                     </div>
                     <div class="col-lg-3">
                         <div class="input-group mb-2">
@@ -87,11 +88,11 @@
                             <div class="input-group-text">
                                 <div class=""><i class="fa fa-phone" style="color: #065a92;"></i></div>
                             </div>
-                            <input type="text" class="form-control" name="customer_number" id="customer_number"
+                            <input type="tel" class="form-control" name="customer_number" id="customer_number"
                                 placeholder="Customer Contac Number">
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="input-group mb-2">
                             <div class="input-group-text">
                                 <div class=""><i class="fa fa-address-card" style="color: #065a92;"></i></div>
@@ -101,8 +102,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="row">
@@ -265,9 +264,9 @@
                                                     <tr>
                                                         <td colspan="3">
                                                             <button onclick="window.location.reload()" type="button"
-                                                                class="btn btn-danger rounded-pill mb-3">Suspend</button>
+                                                                class="btn btn-danger  mb-3">Suspend</button>
                                                             <button id="paymetn_button" type="button"
-                                                                class="btn btn-success rounded-pill mb-3">Payment</button>
+                                                                class="btn btn-primary mb-3">Payment</button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -934,7 +933,8 @@
                         if (response.success) {
                             toastr.success('order_complete!');
                             $('.invoice').print();
-                            $('#product').load(location.href);
+                            // $('#product').load(location.href);
+                            location.reload();
 
                         }
                         if (response.fails) {

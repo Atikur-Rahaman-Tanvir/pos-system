@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('expenceses', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('order_id');
-            $table->string('invoice_no');
-            $table->string('customer_name');
-            $table->string('customer_number');
-            $table->longText('customer_address');
-            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->longText('name');
+            $table->integer('amount');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('expenceses');
     }
 };

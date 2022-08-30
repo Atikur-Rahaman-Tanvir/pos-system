@@ -34,7 +34,7 @@
                                             <div class="search_inner">
 
                                                 <div class="search_field">
-                                                    <input type="text" placeholder="Search content here..."
+                                                    <input type="text" placeholder="Search by invoice no or phone number..."
                                                         id="search_box" name="search">
 
                                                 </div>
@@ -89,9 +89,9 @@
                                                     <td>{{ $order->created_at->format('d M Y') }}</td>
                                                     <td>#{{ $order->invoice_no }}</td>
                                                     <td>{{ $order->product_quentity }}</td>
-                                                    <td>{{ $order->sub_total }}</td>
-                                                    <td>{{ $order->discount }}</td>
-                                                    <td>{{ $order->grand_total }}</td>
+                                                    <td>${{ $order->sub_total }}</td>
+                                                    <td>{{ $order->discount }}%</td>
+                                                    <td>${{ $order->grand_total }}</td>
 
 
                                                     <td>
@@ -284,10 +284,12 @@
                         'search': value
                     },
                     success: function(response) {
+                        console.log(response);
                         $('#data_table').html(response);
                         if (response.not_found) {
                             $('#data_table').html("<span class='text-danger'>" + response
                                 .not_found + "</span>");
+                            toastr.error('No Bill Found');
 
                         }
                         if (response.null) {
@@ -300,7 +302,9 @@
             // print
             $('.print_btn').click(function(e) {
                 e.preventDefault();
-                $(".invoice_body").print();
+                $(".invoice_body").print({
+                    title:'Invoice',
+                });
             });
 
             //invoice

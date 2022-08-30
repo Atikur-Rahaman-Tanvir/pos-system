@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Order;
 use App\Models\Order_Detail;
 use Carbon\Carbon;
@@ -20,15 +21,28 @@ class ReportController extends Controller
         $search = $request->search;
         if (!is_null($search)) {
             $orders = Order::where('invoice_no', 'like', '%' . $search . '%')->get();
+            if ($orders->count() >= 1) {
+                return view('admin.pages.bill.search', compact('orders'));
+            } else {
+                $customers = Customer::where('customer_number','like', '%' . $search . '%')->get();
+                if ($customers->count() >= 1) {
+                    $orders = [];
+                    foreach ($customers as $customer) {
+                        $orders[] = $customer->order;
+                    }
+                    return view('admin.pages.bill.number_search', compact('orders'));
+                    return $orders;
+                }else{
+
+                    return response()->json(['not_found' => 'No Data Found.', 'search' => $request->search]);
+                }
+
+            }
         } else {
-            return response()->json(['null' => 'search vlaue null']);
+            $orders = Order::latest()->orderBy('created_at', 'ASC')->get();
+            return view('admin.pages.bill.search', compact('orders'));
         }
 
-        if ($orders->count() >= 1) {
-            return view('admin.pages.bill.search', compact('orders'));
-        } else {
-            return response()->json(['not_found' => 'No Data Found.', 'search' => $request->search]);
-        }
     }
 
     //bill invoice
@@ -73,23 +87,22 @@ class ReportController extends Controller
             // return $orders;
             if($orders->count() >= 1){
                 $show_date = $month.'-'.$year;
-                return view('admin.pages.report.search', compact('orders', 'show_date'));
+                $search_month = $month;
+                return view('admin.pages.report.search', compact('orders', 'show_date', 'search_month'));
             }
             else{
                 return response()->json(['not_found' => 'Not Found!']);
             }
         }
     }
-    //serch by month
+    //serch by year
     public function yearly_report(Request $request){
         if(!is_null($request->data)){
             $date = explode('-', $request->data);
             $year = $date[0];
 
-
-
             $orders = Order::select(
-                DB::raw("monthName(created_at) as day"),
+                DB::raw("month(created_at) as day"),
                 DB::raw('sum(product_quentity) as product_quentity'),
                 DB::raw('sum(purchasing_total) as purchasing_total'),
                 DB::raw('sum(grand_total ) as grand_total '),
@@ -97,7 +110,7 @@ class ReportController extends Controller
             // return $orders;
             if($orders->count() >= 1){
                 $show_date =$year;
-                return view('admin.pages.report.search', compact('orders', 'show_date'));
+                return view('admin.pages.report.yearly_search', compact('orders', 'show_date'));
             }
             else{
                 return response()->json(['not_found' => 'Not Found!']);
