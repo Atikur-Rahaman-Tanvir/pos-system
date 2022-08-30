@@ -187,9 +187,11 @@
                                                                 alt="" class="d-block mx-auto "
                                                                 height="60">
                                                             <div class="row text-center ">
-                                                                <div class="col-12">
-                                                                    <a id="{{ $product->id }}" class="product"
-                                                                        class="f_w_400 color_text_3 f_s_14 d-block">{{ $product->name }}</a>
+                                                                 <div class="col-12">
+                                                                    <h6
+                                                                        class="f_w_400 color_text_3 f_s_14 d-block this_product_name">
+                                                                        {{ $product->name }}
+                                                                        <h6>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <h4 style="display: inline-block"
@@ -216,25 +218,29 @@
                         <div class="card QA_section border-0">
                             <div class="card-body QA_table ">
                                 <div class="table-responsive shopping-cart ">
-                                    <table id="cart_table" class="table mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th class="border-top-0">Product</th>
-                                                <th class="border-top-0">Price</th>
-                                                <th class="border-top-0">Quantity</th>
-                                                <th class="border-top-0">Total</th>
-                                                <th class="border-top-0">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-
-                                        </tbody>
-                                    </table>
-                                    <div id="cart_item" style="height: 300px; overflow:scroll;justify-content:center">
+                                          <div id="" style="height: 300px; overflow:scroll;justify-content:center">
                                         <img style="" class="empty_cart"
                                             src="{{ asset('assets/img/emptyCart.png') }}" alt="">
+                                        <table id="cart_table" class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="border-top-0">Product</th>
+                                                    <th class="border-top-0">Price</th>
+                                                    <th class="border-top-0">Quantity</th>
+                                                    <th class="border-top-0">Total</th>
+                                                    <th class="border-top-0">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="cart_item">
+
+
+                                            </tbody>
+                                        </table>
                                     </div>
+                                    {{-- <div id="cart_item" style="height: 300px; overflow:scroll;justify-content:center">
+                                        <img style="" class="empty_cart"
+                                            src="{{ asset('assets/img/emptyCart.png') }}" alt="">
+                                    </div> --}}
                                 </div>
                                 <div class="row justify-content-end mt_30">
                                     <div class="col-md-12">
@@ -347,6 +353,8 @@
             </div>
         </div>
     </div>
+       <!-- The Modal -->
+
 
         <div class="modal" id="myModal">
         <div class="modal-dialog modal-xl">
@@ -585,7 +593,8 @@
             //quetntiy increment or decrement
             $(document).on('change', '.cart_quentity', function() {
                 var quentity = parseInt($(this).val());
-                if (quentity > 0) {
+                var max = parseFloat($(this).attr('max'));
+                if (quentity <= max) {
                     var item_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
                         '.item_price').text());
                     var product_purchasing_price = parseInt($(this).closest('tr').find('td:nth-child(2)')
@@ -599,14 +608,14 @@
                     cart_total();
                     grand_total();
                 } else {
-                    $(this).val('1');
+                    // $(this).val('1');
                 }
             });
             //quetntiy increment or decrement using keyUp
             $(document).on('keyup', '.cart_quentity', function() {
-                var quentity = parseInt($(this).val());
+                var quentity = parseFloat($(this).val());
                 var max = $(this).attr('max');
-                if (quentity > 0 && quentity <= max) {
+                if (quentity <= max) {
                     var item_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
                         '.item_price').text());
                     var product_purchasing_price = parseInt($(this).closest('tr').find('td:nth-child(2)')
@@ -623,6 +632,7 @@
                     if (quentity > max) {
                         toastr.error('Only ' + max + ' products in stock!');
                         $(this).val(max);
+                         var quentity = parseInt($(this).val());
                         var item_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
                             '.item_price').text());
                         var product_purchasing_price = parseInt($(this).closest('tr').find(
@@ -637,7 +647,7 @@
                         cart_total();
                         grand_total();
                     } else {
-                        $(this).val('1');
+                        $(this).val('');
                         var quentity = $(this).val();
                         var item_price = parseInt($(this).closest('tr').find('td:nth-child(2)').find(
                             '.item_price').text());
@@ -728,7 +738,7 @@
             //discount keyup
             $(document).on('keyup', '.discount', function() {
                 if ($('.sub_total').text() > 0) {
-                    var discount = parseInt($('.discount').val());
+                    var discount = parseFloat($('.discount').val());
                     var subtotal = $('.sub_total').text();
                     if (!isNaN(discount)) {
                         var grand_total = subtotal - (subtotal * discount) / 100;
@@ -842,9 +852,6 @@
 
                 });
             });
-
-
-
             //payment
             $(document).on('click', '#paymetn_button', function() {
                 var order_details = [];
@@ -904,7 +911,7 @@
                     grand_total: $('.grand_total').text(),
                     invoice_no:invoice_no,
                 };
-                console.log(order);
+
                 //order details for invoice order status
                 $('.invoice_sub_total').text($('.sub_total').text());
                 $('.invoice_grand_total').text($('.grand_total').text());
@@ -915,9 +922,6 @@
                 var customer_number = $('#customer_number').val();
                 var customer_address = $('#customer_address').val();
                 var sub_total = $('.sub_total').text();
-
-
-
                 $.ajax({
                     type: 'get',
                     url: "{{ route('admin.test') }}",
@@ -932,9 +936,11 @@
                     success: function(response) {
                         if (response.success) {
                             toastr.success('order_complete!');
-                            $('.invoice').print();
-                            // $('#product').load(location.href);
-                            location.reload();
+                            $('.invoice').print({
+                                 deferred: $.Deferred().done(function() {
+                                    location.reload()
+                                  })
+                            });
 
                         }
                         if (response.fails) {
@@ -942,13 +948,9 @@
                         }
                     }
                 });
-                // }else{
-                //    toastr.warning('Please Enter Customer Name And Contact Number.');
-                // }
             });
-
-
         });
+
     </script>
 
 
