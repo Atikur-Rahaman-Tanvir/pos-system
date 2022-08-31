@@ -161,101 +161,7 @@
             </div>
         </div>
     </div>
-    {{-- <div class="modal fade" id="insert_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add New product</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="insert_form">
-                        @csrf
-                        <div class="col-lg-12">
-                            <div class="white_card card_height_100 ">
-                                <div class="white_card_body">
-                                    <span class="text-danger name_error"></span>
-                                    <div class=" mb-0">
-                                        <input type="text" class="form-control" name="name" id="name"
-                                            placeholder="Enter Product Name">
-                                    </div>
-                                    <p><cite>product name must be unique.</cite></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="white_card card_height_100 ">
-                                <div class="white_card_body">
-                                    <span class="text-danger category_error"></span>
-                                    <div class=" mb-0">
 
-                                        <select id="category" name="category" style="width:400px;">
-                                            @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                            @endforeach
-
-                                        </select>
-                                    </div>
-                                    <p><cite>product name must be unique.</cite></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="white_card card_height_100 ">
-                                <div class="white_card_body">
-                                    <span class="text-danger purchasing_price_error"></span>
-                                    <div class=" mb-0">
-                                        <input type="number" class="form-control" name="purchasing_price"
-                                            id="purchasing_price" placeholder="Enter Purchasing Price">
-                                    </div>
-                                    <p><cite>What is the purchase price of this product?.</cite></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="white_card card_height_100 ">
-                                <div class="white_card_body">
-                                    <span class="text-danger selling_price_error"></span>
-                                    <div class=" mb-0">
-                                        <input type="number" class="form-control" name="selling_price"
-                                            id="selling_price" placeholder="Enter Selling Price">
-                                    </div>
-                                    <p><cite>What is the selling price of this product?</cite></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="white_card card_height_100 ">
-                                <div class="white_card_body">
-                                    <span class="text-danger quentity_error"></span>
-                                    <div class=" mb-0">
-                                        <input type="number" class="form-control" name="quentity" id="quentity"
-                                            placeholder="Enter Product Quentity">
-                                    </div>
-                                    <p><cite>Enter how many product available in stock.</cite></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="white_card card_height_100 ">
-                                <div class="white_card_body">
-                                    <span class="text-danger image_error"></span>
-                                    <div class=" mb-0">
-                                        <input type="file" class="form-control" name="image" id="image">
-                                    </div>
-                                    <p><cite>Product thumbnail image.</cite></p>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-5">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> --}}
          <!-- The Modal -->
     <div class="modal" id="insert_modal">
         <div class="modal-dialog modal-xl">
@@ -363,25 +269,29 @@
         </div>
     </div>
 
-    <div class="modal fade" id="edit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+
+    <div class="modal" id="edit_modal">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
+
+                <!-- Modal Header -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">product Edit And Update</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h4 class="modal-title" style="display:inline-block;margin-right:10px">Invoice</h4>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
+
+                <!-- Modal body -->
+                  <div class="modal-body">
                     <form id="edit_form">
                         @csrf
-                        <input type="hidden" name="id" id="edit_id">
-                        <div class="col-lg-12">
+                        <div class="row">
+                            <input type="hidden" name="id" id="edit_id">
+                        <div class="col-lg-6">
                             <div class="white_card card_height_100 ">
                                 <div class="white_card_body">
-                                    <span class="text-danger name_error"></span>
+                                    <label for="" class="form-label" style="font-weight: bolder;font-size:20px">Product Name</label>
                                     <div class=" mb-0">
+                                        <span class="text-danger name_error"></span>
                                         <input type="text" class="form-control" name="name" id="edit_name"
                                             placeholder="Enter Product Name">
                                     </div>
@@ -389,12 +299,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <div class="white_card card_height_100 ">
                                 <div class="white_card_body">
-                                    <span class="text-danger category_error"></span>
-                                    <div class=" mb-0">
-
+                                     <label for="" class="form-label" style="font-weight: bolder;font-size:20px">Product Cateogry/Brand</label>
+                                     <div class=" mb-0">
+                                        <span class="text-danger category_error"></span>
                                         <select id="edit_category" name="category" style="width:400px;">
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -402,27 +312,29 @@
 
                                         </select>
                                     </div>
-                                    <p><cite>product name must be unique.</cite></p>
+                                    <p><cite>select product cateogry or brand</cite></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <div class="white_card card_height_100 ">
                                 <div class="white_card_body">
-                                    <span class="text-danger purchasing_price_error"></span>
-                                    <div class=" mb-0">
-                                        <input type="number" class="form-control" name="purchasing_price"
+                                     <label for="" class="form-label" style="font-weight: bolder;font-size:20px">Product Purchasing Price</label>
+                                     <div class=" mb-0">
+                                         <span class="text-danger purchasing_price_error"></span>
+                                         <input type="number" class="form-control" name="purchasing_price"
                                             id="edit_purchasing_price" placeholder="Enter Purchasing Price">
                                     </div>
                                     <p><cite>What is the purchase price of this product?.</cite></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <div class="white_card card_height_100 ">
                                 <div class="white_card_body">
-                                    <span class="text-danger selling_price_error"></span>
+                                    <label for="" class="form-label" style="font-weight: bolder;font-size:20px">Product Selling Price</label>
                                     <div class=" mb-0">
+                                        <span class="text-danger selling_price_error"></span>
                                         <input type="number" class="form-control" name="selling_price"
                                             id="edit_selling_price" placeholder="Enter Selling Price">
                                     </div>
@@ -430,11 +342,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <div class="white_card card_height_100 ">
                                 <div class="white_card_body">
-                                    <span class="text-danger quentity_error"></span>
+                                    <label for="" class="form-label" style="font-weight: bolder;font-size:20px">Product Quentity In Stock</label>
                                     <div class=" mb-0">
+                                        <span class="text-danger quentity_error"></span>
                                         <input type="number" class="form-control" name="quentity" id="edit_quentity"
                                             placeholder="Enter Product Quentity">
                                     </div>
@@ -445,6 +358,7 @@
                         <div class="col-lg-12">
                             <div class="white_card card_height_100 ">
                                 <div class="white_card_body">
+                                 <label for="" class="form-label" style="font-weight: bolder;font-size:20px">Product Thumbnail Image</label>
                                     <span class="text-danger image_error"></span>
                                     <div class=" mb-0">
                                         <input type="file" class="form-control" name="image" id="image">
@@ -453,7 +367,9 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary mt-5">Submit</button>
+                        <button type="submit" class="btn btn-primary mt-5">Submit</button>
+
+                        </div>
                     </form>
                 </div>
             </div>
@@ -517,7 +433,7 @@
                             toastr.success(response.success);
                             $('#data_table').load(location.href + ' #data_table');
                         } else {
-                            console.log(response.fails.name);
+
                             if (response.fails) {
 
                                 $.each(response.fails, function(key, value) {
@@ -573,9 +489,12 @@
                             $('#data_table').load(location.href + ' #data_table');
                             $('#search_box').val('');
                         } else {
-                            console.log(response.fails.name);
-                            if (response.fails.name) {
-                                $('.name_error').text(response.fails.name);
+
+                            if (response.fails) {
+
+                                $.each(response.fails, function(key, value) {
+                                    $('.' + key + '_error').text(value);
+                                });
                             }
                         }
                     }

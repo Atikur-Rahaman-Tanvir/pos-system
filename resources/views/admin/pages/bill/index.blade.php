@@ -32,17 +32,14 @@
                                     <div class="box_right d-flex lms_block">
                                         <div class="serach_field_2">
                                             <div class="search_inner">
-
                                                 <div class="search_field">
                                                     <input type="text" placeholder="Search by invoice no or phone number..."
                                                         id="search_box" name="search">
-
                                                 </div>
                                                 <button type="submit"> <i class="ti-search"></i> </button>
 
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="QA_table mb_30" id="data_table">

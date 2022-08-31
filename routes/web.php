@@ -7,6 +7,8 @@ use App\Http\Controllers\Expenceses;
 use App\Http\Controllers\posController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ReturnController;
+use App\Http\Controllers\SupplyerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -89,6 +91,21 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     Route::get('expencese/report', [Expenceses::class, 'report'])->name('expencese.report');
     Route::get('expencese/monthly/report', [Expenceses::class, 'monthly_report'])->name('expencese.monthly.report');
     Route::get('expencese/yearly/report', [Expenceses::class, 'yearly_report'])->name('expencese.yearly.report');
+
+
+    //sypplyer
+    Route::get('supplyer', [SupplyerController::class, 'index'])->name('supplyer.index');
+    Route::post('supplyer/store', [SupplyerController::class, 'store'])->name('supplyer.store');
+    Route::get('supplyer/show', [SupplyerController::class, 'show'])->name('supplyer.show');
+    Route::post('supplyer/edit', [SupplyerController::class, 'edit'])->name('supplyer.edit');
+    Route::get('supplyer/delete', [SupplyerController::class, 'delete'])->name('supplyer.delete');
+    Route::get('supplyer/status', [SupplyerController::class, 'status'])->name('supplyer.status');
+    Route::get('supplyer/search', [SupplyerController::class, 'search'])->name('supplyer.search');
+    Route::get('supplyer/print', [SupplyerController::class, 'print'])->name('supplyer.print');
+
+    //Return
+    Route::get('return', [ReturnController::class, 'index'])->name('return.index');
+    Route::get('return/search', [ReturnController::class, 'search'])->name('return.search');
 
 
 

@@ -129,18 +129,18 @@ class ProductController extends Controller
     {
         $search = $request->search;
         if (!is_null($search)) {
-
             $products = product::where('name', 'like', '%' . $search . '%')->get();
+            if ($products->count() >= 1) {
+                return view('admin.pages.product.search', compact('products'));
+            } else {
+                return response()->json(['not_found' => 'No Data Found.', 'search' => $request->search]);
+            }
         } else {
+
             return response()->json(['null' => 'search vlaue null']);
+
         }
 
-        if ($products->count() >= 1) {
-
-            return view('admin.pages.product.search', compact('products'));
-        } else {
-            return response()->json(['not_found' => 'No Data Found.', 'search' => $request->search]);
-        }
     }
 
     //print
