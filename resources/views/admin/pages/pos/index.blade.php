@@ -529,6 +529,7 @@
                     },
                     dataType: "json",
                     success: function(response) {
+                        var product_id = response.product.id;
                         var image = response.product.image;
                         var per_pices_price = response.product.selling_price;
                         var product_purchasing_price = response.product.purchasing_price;
@@ -555,7 +556,7 @@
                                 '" alt="" height="52">' +
                                 '<p class="d-inline-block align-middle mb-0">' +
                                 ' <a class="d-inline-block align-middle mb-0 f_s_16 f_w_600 color_theme2 cart_product_name">' +
-                                name + '</a><br>' +
+                                name + '</a><input type="hidden" id="product_id" value="'+product_id+'"><br>' +
                                 '<span class="text-muted font_s_13"></span></p>' +
                                 '</td>' +
                                 '<td>$<span class="item_price">' + per_pices_price +
@@ -865,6 +866,8 @@
                     var product_purchasing_total = $(this).find('td').find(
                         '.product_purchasing_total').val();
                     var quentity = $(this).find('td').find('.cart_quentity').val();
+                    var product_id = $(this).find('td').find('#product_id').val();
+
 
                     order_details.push({
                         name: name,
@@ -873,8 +876,9 @@
                         quentity: quentity,
                         product_purchasing_total: product_purchasing_total,
                         product_selling_total: product_total,
+                        product_id:product_id,
                     });
-
+                    console.log(order_details);
                     //invoice
                     var invoice_order_details = '<tr>' +
                         '<td class="center">' + i + '</td>' +

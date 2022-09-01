@@ -7,6 +7,7 @@
              <th scope="col">Quentity</th>
              <th scope="col">Grand Total</th>
              <th scope="col">Purchasing Total</th>
+             <th>Action</th>
 
          </tr>
      </thead>
@@ -22,6 +23,7 @@
                  <td>{{ $order->product_quentity }} pcs</td>
                  <td>${{ $order->grand_total }}</td>
                  <td>${{ $order->purchasing_total }}</td>
+                 <a href="" class="btn btn-sm">Go To Return</a>
              </tr>
          @endforeach
      </tbody>

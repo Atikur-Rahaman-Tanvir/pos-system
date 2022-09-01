@@ -72,7 +72,6 @@
                                                             <a id="{{ $expencese->id }}" class="action_btn mr_10 edit "
                                                                 data-bs-toggle="modal" data-bs-target="#edit_modal"> <i
                                                                     class="far fa-edit"></i> </a>
-
                                                             <a id="{{ $expencese->id }}" class="action_btn delete"
                                                                 data-bs-toggle="modal" data-bs-target="#delete_modal">
                                                                 <i class="fas fa-trash"></i> </a>

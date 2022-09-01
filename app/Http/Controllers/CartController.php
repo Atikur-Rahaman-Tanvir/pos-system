@@ -59,6 +59,7 @@ class CartController extends Controller
                 $order_details = new Order_Detail();
                 $order_details->order_id = $order->id;
                 $order_details->invoice_no = $order->invoice_no;
+                $order_details->product_id = $order_detail['product_id'];
                 $order_details->product_name = $order_detail['name'];
                 $order_details->product_purchasing_price = $order_detail['product_purchasing_price'];
                 $order_details->product_selling_price = $order_detail['sell_price'];

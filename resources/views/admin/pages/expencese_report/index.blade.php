@@ -65,7 +65,7 @@
                                             <tr style="text-align: center">
                                                 <td></td>
                                                 <td colspan=""><span class="text-danger" style="font-weight: bold">Total</span></td>
-                                                <td style=""><span class="text-danger" style="font-weight: bold">${{$expencese->sum('amount')}}</span></td>
+                                                <td style=""><span class="text-danger" style="font-weight: bold">${{$expenceses->sum('amount')}}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>

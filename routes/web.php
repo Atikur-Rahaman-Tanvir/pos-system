@@ -104,9 +104,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     Route::get('supplyer/print', [SupplyerController::class, 'print'])->name('supplyer.print');
 
     //Return
-    Route::get('return', [ReturnController::class, 'index'])->name('return.index');
+    Route::get('return/index', [ReturnController::class, 'index'])->name('return.index');
     Route::get('return/search', [ReturnController::class, 'search'])->name('return.search');
-
-
-
+    Route::get('order/details/{id}', [ReturnController::class, 'details'])->name('order.details');
+    Route::get('return', [ReturnController::class, 'return'])->name('return');
 });

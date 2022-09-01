@@ -30,8 +30,7 @@
                         <div class="white_card_body">
                             <div class="QA_section">
                                 <div class="white_box_tittle list_header">
-                                    <h4>Return<span class="btn btn-outline-danger"><i
-                                                class="fa fa-print print_btn"></i></span></h4>
+                                    <h4>All Bills</h4>
                                     <div class="box_right d-flex lms_block">
                                         <div class="serach_field_2">
                                             <div class="search_inner">
@@ -49,15 +48,18 @@
                                 </div>
 
                                 <div class="QA_table mb_30" id="data_table">
-                                    <table class="table  text-center">
+                                    <table class="table lms_table_active3  text-center">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Sl No</th>
                                                 <th scope="col">Date</th>
                                                 <th scope="col">Invoice No</th>
                                                 <th scope="col">Quentity</th>
+                                                <th scope="col">Sub Total</th>
+                                                <th scope="col">Discount</th>
                                                 <th scope="col">Grand Total</th>
-                                                <th scope="col">Purchasing Total</th>
+                                                <th scope="col">Action</th>
+
 
                                             </tr>
                                         </thead>
@@ -71,8 +73,10 @@
                                                     <td>#{{ $order->invoice_no }}</td>
 
                                                     <td>{{ $order->product_quentity }} pcs</td>
+                                                    <td>${{ $order->sub_total }}</td>
+                                                    <td>{{ $order->discount }}%</td>
                                                     <td>${{ $order->grand_total }}</td>
-                                                    <td>${{ $order->purchasing_total }}</td>
+                                                    <td><a href="{{route('admin.order.details',$order->id)}}" class="btn btn-sm btn-danger">Go To Return</a></td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -105,14 +109,6 @@
                 }
             });
 
-            // print
-            $('.print_btn').click(function(e) {
-                e.preventDefault();
-                $("#data_table").print({
-                    title: "Selling return",
-
-                });
-            });
 
             // search
             $('#search_box').on('keyup', function() {
